@@ -1,0 +1,12 @@
+{
+  "name": "bm-search-widget",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config ../../scripts/rollup.config.js",
+    "dev": "cross-env NODE_ENV=development rollup --config ../../scripts/rollup.config.js --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}

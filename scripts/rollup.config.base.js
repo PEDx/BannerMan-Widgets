@@ -7,7 +7,14 @@ import postcss from 'rollup-plugin-postcss';
 import uglify from 'rollup-plugin-uglify-es';
 const path = require('path');
 
-const outputTypes = [{ file: './dist/index.js', format: 'es' }];
+const outputTypes = [
+  {
+    name: 'index',
+    file: './dist/index.js',
+    format: 'umd',
+    intro: '// BannerMan Widget',
+  },
+];
 
 const tasks = outputTypes.map(output => ({
   input: './index.js',
@@ -17,17 +24,24 @@ const tasks = outputTypes.map(output => ({
       extensions: ['.js', '.vue', '.json'],
       dedupe: ['vue'],
     }),
-    filesize(),
-    commonjs(),
+    filesize(), // 统计文件大小
+    commonjs(), // 将 CommonJS 模块转换为 ES2015 供 Rollup 处理
     postcss({
-      extract: true, // 提取 css 为单文件
+      extract: false, // 提取 css 为单文件
       minimize: true,
-    }),
-    vue({ css: false }),
+    }), // 处理 css
+    vue({ css: false }), // 处理vue文件
     babel({
       exclude: 'node_modules/**',
-    }),
-    process.env.NODE_ENV === 'production' ? uglify() : null,
+    }), // ，ES6转ES5
+    {
+      name: 'plugin',
+      transformBundle(code) {
+        console.log('自定义插件');
+        return code;
+      },
+    },
+    uglify(), //js压缩
   ],
 }));
 

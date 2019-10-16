@@ -6,4 +6,4 @@ import profile from './profile';
 Vue.directive('tap', VTap);
 component._profile_ = profile;
 
-export default component;
+export default Vue.component('widget-button', component);

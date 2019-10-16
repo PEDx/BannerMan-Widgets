@@ -1,0 +1,11 @@
+{
+  "name": "widget-button",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config ../../scripts/rollup.config.base.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

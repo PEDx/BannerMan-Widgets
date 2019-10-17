@@ -50,7 +50,7 @@ export default function http(opt) {
           res = JSON.parse(res);
         } catch (err) {}
       }
-      if (res.rCode !== 0) Toast(res.msg);
+      if (res.code !== 0) Toast(res.msg);
       success(res);
       return;
     }

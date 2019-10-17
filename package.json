@@ -4,6 +4,7 @@
   "scripts": {
     "build": "lerna run build",
     "storybook": "start-storybook -p 6006",
+    "publish": "lerna publish --contents dist",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {

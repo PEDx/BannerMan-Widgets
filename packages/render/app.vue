@@ -10,15 +10,7 @@ import {
   traversal,
   getProfileByInstance
 } from "../common/js/utils";
-import http from "../common/js/http";
 
-function reqGetPageById(pageID, callback) {
-  return http({
-    url: `/api/v1/page/${pageID}`,
-    type: "GET",
-    success: callback
-  });
-}
 const EVENT_CONTROLLER_TYPE = "CTRL_ON_EVENT";
 
 export default {

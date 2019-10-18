@@ -1,6 +1,9 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
+  "command": {
+    "publish": {
+      "ignoreChanges": ["ignored-file"]
+    }
+  },
   "version": "independent"
 }

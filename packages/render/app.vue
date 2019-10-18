@@ -12,6 +12,7 @@ import {
 } from "../common/js/utils";
 
 const EVENT_CONTROLLER_TYPE = "CTRL_ON_EVENT";
+const BANNER_MAN_PAGE_DATA = window.BANNER_MAN_PAGE_DATA;
 
 export default {
   data() {
@@ -50,8 +51,8 @@ export default {
     _renderPageFromLocal(pageId) {
       const widgets = this.$root.$options.components;
       console.time("renderPageFromRemote");
-      document.title = pageData.name;
-      const componentsModelTree = pageData.data;
+      document.title = BANNER_MAN_PAGE_DATA.name;
+      const componentsModelTree = BANNER_MAN_PAGE_DATA.data;
       const _promiseArr = [];
       const _promiseMap = {};
       traversal(componentsModelTree, node => {

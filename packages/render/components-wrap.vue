@@ -12,7 +12,7 @@
         :child-deep-level="level"
         v-bind="item.props"
       >
-        <template v-if="rootRender.getExtendOptionsByName(item.name)._isMultContainer_">
+        <template v-if="rootRender.getProfileByName(item.name).multContainer">
           <components-wrap
             v-for="(val, idx) in item.children"
             :key="idx"

@@ -12,12 +12,12 @@ import {
 } from "../common/js/utils";
 
 const EVENT_CONTROLLER_TYPE = "CTRL_ON_EVENT";
-const BANNER_MAN_PAGE_DATA = window.BANNER_MAN_PAGE_DATA;
+const BANNER_MAN_PAGE_DATA = window.BANNER_MAN_PAGE_DATA; // 页面数据由构建时注入
 
 export default {
   data() {
     this.onEventMap = {};
-    this.componentProfileMap = {};
+    this.componentExtendOptionsMap = {};
     return {
       componentsModelTree: []
     };
@@ -63,9 +63,10 @@ export default {
           const _val = node.props[key];
           node.props[key] = _val;
         });
-        if (this.componentProfileMap[name]) return;
+        if (this.componentExtendOptionsMap[name]) return;
         // profile map 需要在渲染前收集完毕
-        this.componentProfileMap[name] = widgets[name].extendOptions._profile_;
+        // fix: 运行时可以通过打包优化掉组件的 Profile
+        this.componentExtendOptionsMap[name] = widgets[name].extendOptions;
       });
       // 开始启动渲染
       this.componentsModelTree = componentsModelTree;
@@ -81,9 +82,9 @@ export default {
         });
       });
     },
-    getProfileByName(name) {
+    getExtendOptionsByName(name) {
       if (!name) return;
-      return this.componentProfileMap[name];
+      return this.componentExtendOptionsMap[name];
     }
   }
 };

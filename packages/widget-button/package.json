@@ -7,7 +7,6 @@
     "build": "rollup --config ../../scripts/rollup.config.js"
   },
   "author": "ped",
-  "license": "ISC",
   "files": [
     "dist"
   ],

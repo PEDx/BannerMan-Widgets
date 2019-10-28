@@ -5,5 +5,8 @@
       "ignoreChanges": ["ignored-file"]
     }
   },
+  "publishConfig": {
+    "directory": "dist"
+  },
   "version": "independent"
 }

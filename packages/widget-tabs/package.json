@@ -1,6 +1,6 @@
 {
   "name": "@banner-man/widget-tabs",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "",
   "main": "dist/index.js",
   "scripts": {

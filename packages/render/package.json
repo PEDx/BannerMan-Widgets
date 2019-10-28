@@ -8,7 +8,8 @@
   },
   "author": "ped",
   "license": "ISC",
-  "publishConfig": {
-    "directory": "dist"
-  }
+  "files": [
+    "dist"
+  ],
+  "gitHead": "04bf78139bc6aacf51b9f5578f8fc3db873ce738"
 }

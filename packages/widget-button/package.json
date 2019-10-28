@@ -2,7 +2,7 @@
   "name": "@banner-man/widget-button",
   "version": "0.0.9",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rollup --config ../../scripts/rollup.config.js"
   },

@@ -62,7 +62,9 @@ console.log('++++>');
 console.log(change_pkg);
 change_pkg.forEach(async val => {
   if (!val) return;
-  const pkg_path = path.resolve(package_path, val);
+  let _name = val.split('/');
+  _name = _name[_name.length - 1];
+  const pkg_path = path.resolve(package_path, _name);
   console.log(`build ${pkg_path}`);
   await rollupBuild(pkg_path, 'dist');
 });

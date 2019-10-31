@@ -57,5 +57,12 @@ async function rollupBuild(src_dir, dest_dir) {
 // module.exports = rollupBuild;
 // console.log(path.resolve('package'));
 
-const change_pkg = shell.exec(`lerna changed`).stdout;
+const change_pkg = shell.exec(`lerna changed`).stdout.split('\n');
+console.log('++++>');
 console.log(change_pkg);
+change_pkg.forEach(async val => {
+  if (!val) return;
+  const pkg_path = path.resolve(package_path, val);
+  console.log(`build ${pkg_path}`);
+  await rollupBuild(pkg_path, 'dist');
+});

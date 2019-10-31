@@ -38,7 +38,7 @@ const inputOptions = src_dir => ({
     terser(), //js压缩
   ],
 });
-const outputOptions = dest_dir => ({
+const outputOptions = (src_dir, dest_dir) => ({
   dir: path.resolve(src_dir, dest_dir),
   name: 'index',
   file: 'index.js',

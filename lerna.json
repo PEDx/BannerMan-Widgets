@@ -5,9 +5,5 @@
       "ignoreChanges": ["ignored-file"]
     }
   },
-  "lifecycle": {
-    "version": "conventional-recommended-bump -p angular",
-    "pretag": "conventional-changelog -p angular"
-  },
   "version": "independent"
 }

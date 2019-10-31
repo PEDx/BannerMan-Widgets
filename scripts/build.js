@@ -8,6 +8,7 @@ const postcss = require('rollup-plugin-postcss');
 const { terser } = require('rollup-plugin-terser');
 const replace = require('rollup-plugin-replace');
 const path = require('path');
+const shell = require('shelljs');
 const rimraf = require('rimraf');
 // see below for details on the options
 const package_path = '../packages';
@@ -54,4 +55,7 @@ async function rollupBuild(src_dir, dest_dir) {
 }
 
 // module.exports = rollupBuild;
-console.log(path.resolve('package'));
+// console.log(path.resolve('package'));
+
+const change_pkg = shell.exec(`lerna changed`).stdout;
+console.log(change_pkg);

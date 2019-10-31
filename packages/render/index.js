@@ -5,8 +5,8 @@ import '../common/style/cssrest.css';
 import VTap from '../common/js/v-tap';
 
 
-Vue.directive('tap', VTap);
 Vue.component('components-wrap', componentsWrap);
+Vue.directive('tap', VTap);
 
 /* eslint-disable no-new */
 new Vue({

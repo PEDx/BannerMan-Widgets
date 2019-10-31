@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup --config ../../scripts/rollup.config.js"
+    "build": "rollup --config ../../scripts/rollup.config.js",
+    "prepublish": "npm run build"
   },
   "author": "ped",
   "files": [

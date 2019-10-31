@@ -2,5 +2,6 @@
   "name": "@banner-man/common",
   "version": "0.0.6",
   "description": "library",
-  "author": "ped"
+  "author": "ped",
+  "gitHead": "6432dd11ed54be630a4d78bf10715ebd6fff930f"
 }

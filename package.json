@@ -5,7 +5,8 @@
     "build": "lerna run build",
     "storybook": "start-storybook -p 6006",
     "publish": "lerna publish --contents dist",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "preversion": "node ./scripts/build.js"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.1.9",

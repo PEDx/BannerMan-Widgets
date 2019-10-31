@@ -3,13 +3,6 @@
   "version": "0.0.15",
   "description": "",
   "main": "dist/index.js",
-  "scripts": {
-    "build": "rollup --config ../../scripts/rollup.config.js",
-    "prepublish": "npm run build"
-  },
   "author": "ped",
-  "files": [
-    "dist"
-  ],
-  "gitHead": "04bf78139bc6aacf51b9f5578f8fc3db873ce738"
+  "gitHead": "6432dd11ed54be630a4d78bf10715ebd6fff930f"
 }

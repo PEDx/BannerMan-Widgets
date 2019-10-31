@@ -11,7 +11,7 @@ const path = require('path');
 const shell = require('shelljs');
 const rimraf = require('rimraf');
 // see below for details on the options
-const package_path = '../packages';
+const package_path = 'packages';
 
 const inputOptions = src_dir => ({
   input: path.resolve(src_dir, 'index.js'),

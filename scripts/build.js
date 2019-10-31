@@ -38,12 +38,14 @@ const inputOptions = src_dir => ({
     terser(), //js压缩
   ],
 });
-const outputOptions = (src_dir, dest_dir) => ({
-  dir: path.resolve(src_dir, dest_dir),
-  name: 'index',
-  file: 'index.js',
-  format: 'umd',
-});
+const outputOptions = (src_dir, dest_dir) => {
+  const dir = path.resolve(src_dir, dest_dir);
+  return {
+    name: 'index',
+    file: path.resolve(dir, 'index.js'),
+    format: 'umd',
+  };
+};
 
 async function rollupBuild(src_dir, dest_dir) {
   rimraf.sync(dest_dir);
